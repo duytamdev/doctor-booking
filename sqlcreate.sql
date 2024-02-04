@@ -1,0 +1,79 @@
+-- create database funix_asm3_spring;
+use funix_asm3_spring;
+-- CREATE TABLE roles(
+-- id int(11) primary key auto_increment,
+-- name varchar(255)
+-- );
+-- CREATE TABLE users (
+--     id INT(11) primary key auto_increment,
+--     name VARCHAR(255),
+--     email VARCHAR(255) not null,
+--     password VARCHAR(255) not null,
+--     address VARCHAR(255),
+--     phone VARCHAR(255),
+--     avatar VARCHAR(255),
+--     gender VARCHAR(255),
+--     role_id INT(11),
+--     isActive TINYINT(1) default 1,
+--     FOREIGN KEY (role_id) REFERENCES roles(id)
+-- );
+-- INSERT INTO roles (name) VALUES ("USER"), ("DOCTOR"),("ADMIN");
+-- CREATE TABLE password_reset_token (
+--     id INT AUTO_INCREMENT PRIMARY KEY,
+--     user_id INT NOT NULL,
+--     token VARCHAR(6) NOT NULL,
+--     expiry_date TIMESTAMP NOT NULL,
+--     UNIQUE (token),
+--     FOREIGN KEY (user_id) REFERENCES users(id)
+-- );
+
+-- Chuyên khoa
+-- CREATE TABLE specializations (
+-- 	id int primary key auto_increment,
+--     name varchar(255) not null,
+--     description text,
+--     image varchar(255)
+-- );
+-- phong kham
+-- CREATE TABLE clinics (
+-- 	id int primary key auto_increment,
+--     name varchar(255),
+--     address varchar(255),
+--     phone varchar(255),
+--     introducationHTML text,
+--     introducationMarkdown text,
+--     description text,
+--     image varchar(255)
+-- );
+
+-- CREATE TABLE doctors (
+--     id INT PRIMARY KEY AUTO_INCREMENT,
+--     introduction TEXT,
+--     training_process TEXT,
+--     user_id INT,
+--     FOREIGN KEY (user_id) REFERENCES users(id)
+-- );
+
+-- CREATE TABLE doctors_specializations(
+-- 	 doctor_id INT,
+--     specialization_id INT,
+--     PRIMARY KEY (doctor_id, specialization_id),
+--     FOREIGN KEY (doctor_id) REFERENCES doctors(id),
+--     FOREIGN KEY (specialization_id) REFERENCES specializations(id)
+-- )
+
+-- CREATE TABLE appointment_schedule (
+-- 	id INT PRIMARY KEY AUTO_INCREMENT,
+--     doctor_id INT,
+--     user_id INT,
+--     hours varchar(255),
+--     fee int,
+--     reason_for_visit varchar(255),
+--     FOREIGN KEY (doctor_id) REFERENCES doctors(id),
+--     FOREIGN KEY (user_id) references users(id)
+-- )
+
+-- ALTER TABLE users
+-- DROP COLUMN isActive;
+-- ALTER TABLE `funix_asm3_spring`.`users`
+-- MODIFY COLUMN `is_active` BIT(1) DEFAULT 1;
