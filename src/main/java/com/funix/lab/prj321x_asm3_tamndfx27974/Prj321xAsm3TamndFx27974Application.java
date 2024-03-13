@@ -32,6 +32,7 @@ public class Prj321xAsm3TamndFx27974Application implements CommandLineRunner {
             admin1.setName("Admin");
             admin1.setPhone("0123456789");
             admin1.setAddress("Ha Noi");
+            admin1.setActive(true);
             admin1.setRole(adminRole);
             admin1.setPassword(new BCryptPasswordEncoder().encode("1234"));
             userRepository.save(admin1);
